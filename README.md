@@ -93,7 +93,7 @@ hexo server
 
   ```bash
 
-h  exo new page "links"
+  h  exo new page "links"
 
   ```
   
@@ -104,6 +104,7 @@ h  exo new page "links"
 使用你喜欢的 Markdown 编辑器（如 VS Code, Typora）打开 `.md` 文件进行创作。请特别注意文件头部的 **Front-matter** 区域，它控制着文章的各种元数据。
 
 **一个标准的 Front-matter 示例:**
+
 ```yaml
 ---
 title: "深入理解 Hexo 工作流" # 文章标题
