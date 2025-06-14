@@ -2,205 +2,193 @@
 
 #  Nomad's Blog - 源代码仓库
 
-**✨ 欢迎来到我的数字花园，一个记录、思考与分享的技术空间 ✨**
+**✨ 在代码的世界里游牧，记录每一次探索与成长 ✨**
 
 </div>
 
 <p align="center">
+  <!-- Vercel 部署状态 -->
+  <a href="https://vercel.com/424635328s-projects/nomad" target="_blank">
+    <img src="https://vercelbadge.vercel.app/api/424635328s-projects/nomad" alt="Vercel Deployment">
+  </a>
   <!-- 在线访问 -->
-  <a href="https://424635328.github.io/Nomad/" target="_blank">
-    <img src="https://img.shields.io/badge/Blog-在线访问-brightgreen?style=for-the-badge&logo=micro.blog" alt="Blog">
-  </a>
-  <!-- 构建状态 -->
-  <a href="https://github.com/424635328/Nomad/actions/workflows/pages.yml" target="_blank">
-    <img src="https://img.shields.io/github/actions/workflow/status/424635328/Nomad/pages.yml?branch=main&style=for-the-badge&logo=githubactions&logoColor=white" alt="Build Status">
-  </a>
-  <!-- 依赖状态 -->
-  <a href="https://github.com/424635328/Nomad/blob/main/package.json" target="_blank">
-    <img src="https://img.shields.io/github/package-json/v/424635328/Nomad?style=for-the-badge&logo=npm" alt="Version">
+  <a href="https://nomad-rho-nine.vercel.app/" target="_blank">
+    <img src="https://img.shields.io/badge/Blog-在线访问-0098AC?style=for-the-badge&logo=vercel" alt="Blog">
   </a>
   <!-- 最后提交 -->
   <img src="https://img.shields.io/github/last-commit/424635328/Nomad?style=for-the-badge&logo=git&logoColor=white" alt="Last Commit">
 </p>
 
-## 📖 项目概述 (Overview)
+## 📌 导航目录 (Table of Contents)
 
-本仓库是我的个人博客网站的**源代码**。它使用 [Hexo](https://hexo.io/zh-cn/) 进行静态站点生成，并采用优雅的 [NexT](https://theme-next.js.org/) 主题进行渲染。所有文章均以 Markdown 格式书写，通过 GitHub Actions 自动部署到 [GitHub Pages](https://pages.github.com/)。
+- [💡 项目理念 (Philosophy)](#-项目理念-philosophy)
+- [🏗️ 技术架构 (Architecture)](#️-技术架构-architecture)
+- [🚀 本地开发工作流 (Local Development)](#-本地开发工作流-local-development)
+- [✍️ 内容创作指南 (Content Creation)](#️-内容创作指南-content-creation)
+- [☁️ 部署与上线 (Deployment)](#️-部署与上线-deployment)
+- [🔧 配置深度解析 (Configuration Deep Dive)](#-配置深度解析-configuration-deep-dive)
+- [❓ 常见问题排查 (FAQ)](#-常见问题排查-faq)
+- [🙏 致谢 (Acknowledgements)](#-致谢-acknowledgements)
 
-- **博客主题**：技术分享、学习笔记、项目复盘、生活感悟。
-- **技术栈**：`Hexo` | `NexT Theme` | `Node.js` | `pnpm` | `Markdown` | `GitHub Pages`
+## 💡 项目理念 (Philosophy)
+
+"Nomad" (游牧者) 代表了在广袤的数字世界中不断迁徙、学习和探索的精神。本博客旨在成为我的“数字营地”，用以：
+
+-   **记录**：沉淀技术学习中的关键知识点与实践经验。
+-   **思考**：复盘项目，反思成长，将零散的想法系统化。
+-   **分享**：将有价值的内容分享给社区，与同行交流互助。
 
 ---
 
-## 🚀 环境搭建与本地运行 (Setup & Local Development)
+## 🏗️ 技术架构 (Architecture)
 
-在开始之前，请确保你的开发环境满足以下要求。
+本博客采用现代化的静态站点方案，实现了高效、安全、免费的托管。
 
-### 1. 必备环境 (Prerequisites)
+-   **静态站点生成**: [**Hexo**](https://hexo.io/zh-cn/) - 快速、简洁且强大的博客框架。
+-   **主题渲染**: [**Fluid**](https://hexo.fluid-dev.com/) - 一款如水般流畅、优雅且功能丰富的 Hexo 主题。
+-   **包管理**: [**pnpm**](https://pnpm.io/) - 快速、节省磁盘空间的 Node.js 包管理器。
+-   **持续集成与部署 (CI/CD)**: [**Vercel**](https://vercel.com/) - 提供全球 CDN 加速、自动化构建和免费托管。
 
-- **Git**: 版本控制系统。 [官方下载](https://git-scm.com/downloads)
-- **Node.js**: JavaScript 运行环境。**推荐 `v18.x` 或更高版本的 LTS**。 [官方下载](https://nodejs.org/zh-cn/)
-- **pnpm**: 高效的包管理器。通过 `npm` 全局安装：
+### 分支策略 (Branching Strategy)
 
-  ```bash
-  npm install -g pnpm
-  ```
+-   `main` 分支: **源代码分支**。所有文章的撰写、配置的修改都在此分支进行。
+-   Vercel 会自动监听 `main` 分支的 `git push` 事件，并触发自动构建和部署。
+
+---
+
+## 🚀 本地开发工作流 (Local Development)
+
+### 1. 环境准备 (Prerequisites)
+
+-   **Git**: [官方下载](https://git-scm.com/downloads)
+-   **Node.js**: **推荐 `v18.x` 或更高版本的 LTS**。 [官方下载](https://nodejs.org/zh-cn/)
+-   **pnpm**: 通过 `npm` 全局安装: `npm install -g pnpm`
 
 ### 2. 初始化项目 (Initialization)
 
 ```bash
-# 1. 克隆本仓库到本地
+# 1. 克隆本仓库
 git clone https://github.com/424635328/Nomad.git
 
 # 2. 进入项目目录
 cd Nomad
 
-# 3. 使用 pnpm 安装所有项目依赖
+# 3. 安装依赖 (请务必使用 pnpm)
 pnpm install
 
-# 4. 全局安装 Hexo 命令行工具 (如果尚未安装)
+# 4. 全局安装 Hexo 命令行 (若未安装)
 npm install -g hexo-cli
 ```
+> **⚠️ 重要提示**: 本项目已锁定使用 `pnpm`。请**不要**使用 `npm` 或 `yarn` 安装依赖，以免破坏 `pnpm-lock.yaml` 文件，导致依赖不一致或部署失败。
 
-> **⚠️ 重要提示**: 本项目已锁定使用 `pnpm` 作为唯一的包管理器。请**不要**使用 `npm install` 或 `yarn install`，以免造成依赖冲突和不可预知的错误。
-
-### 3. 本地预览 (Run Locally)
-
-执行以下命令，即可在本地启动一个实时预览服务器，默认端口为 `4000`。
+### 3. 启动本地预览
 
 ```bash
+# 启动实时预览服务器
 hexo server
-# 简写: hexo s
-```
 
-服务器启动后，在浏览器中访问 `http://localhost:4000`。你对文章或配置的任何修改，都将实时反映在浏览器中（部分配置修改可能需要重启服务）。
+# 如果需要预览草稿文件夹 (_drafts) 中的文章
+hexo server --draft
+```
+服务器启动后，访问 `http://localhost:4000` 即可预览。
 
 ---
 
-## ✍️ 日常工作流 (Daily Workflow)
+## ✍️ 内容创作指南 (Content Creation)
 
-### 1. 新建内容
+### 1. 新建文章或页面
 
-- **新建文章**:
+```bash
+# 新建文章
+hexo new "你的文章标题"
 
-  ```bash
-  hexo new "你的文章标题"
-  ```
+# 新建独立页面 (如 "关于" 页面)
+hexo new page "about"
+```
 
-  这将在 `source/_posts/` 目录下生成对应的 `.md` 文件。
+### 2. Front-matter 详解
 
-- **新建独立页面** (例如 "友链" 页面):
-
-  ```bash
-
-  h  exo new page "links"
-
-  ```
-  
-  这将在 `source/` 目录下创建一个 `links` 文件夹，内含 `index.md`。
-
-### 2. 撰写与编辑
-
-使用你喜欢的 Markdown 编辑器（如 VS Code, Typora）打开 `.md` 文件进行创作。请特别注意文件头部的 **Front-matter** 区域，它控制着文章的各种元数据。
-
-**一个标准的 Front-matter 示例:**
+Front-matter 是位于 Markdown 文件最顶部的 YAML 配置块，用于定义页面元数据。
 
 ```yaml
 ---
-title: "深入理解 Hexo 工作流" # 文章标题
-date: 2024-05-20 14:00:00      # 发表日期 (用于排序)
-updated: 2024-05-21 10:30:00   # 更新日期 (可选)
-tags:                          # 标签 (可有多个)
-  - Hexo
-  - 博客
-  - 前端
-categories: "技术教程"          # 分类 (通常只有一个)
-# cover: /images/post-cover.jpg # 文章封面 (可选, 需主题支持)
-# toc: false                     # 是否显示目录 (可选, 覆盖全局设置)
+title: "深入理解 Vercel 自动化部署"
+date: 2024-05-20 14:00:00
+tags: [CI/CD, Vercel, Hexo]
+categories: "DevOps"
+cover: /img/covers/vercel-deploy.png # Fluid 主题特色：文章封面图
 ---
 ```
+更多可配置项请参考 [Hexo Front-matter 文档](https://hexo.io/zh-cn/docs/front-matter)。
 
-### 3. 部署上线 (Deployment)
+### 3. 资源管理 (图片等)
 
-本项目采用**手动触发部署**的模式。
-
-```bash
-# 完整的三步流程，确保万无一失
-
-# 步骤 1: 清理旧缓存和已生成的 public 目录
-hexo clean
-
-# 步骤 2: 生成最新的静态文件到 public 目录
-hexo generate
-
-# 步骤 3: 将 public 目录的内容推送到 GitHub Pages
-hexo deploy
-```
-
-为图方便，后两步可合并为 `hexo g -d`。
+本项目已启用 `post_asset_folder: true`。这意味着：
+1.  执行 `hexo new "文章标题"` 时，会自动在 `source/_posts` 下创建一个同名文件夹。
+2.  将该文章所需的所有图片、附件等放入此文件夹。
+3.  在 Markdown 中使用**相对路径**引用图片，例如 `![图片描述](./image.png)`。
+这样做可以保证图片的管理与文章绑定，非常清晰且不易出错。
 
 ---
 
-## 🔧 配置与定制 (Configuration & Customization)
+## ☁️ 部署与上线 (Deployment)
 
-### 1. 文件结构概览
+**本项目的部署流程已完全由 Vercel 自动化，无需手动执行 `hexo deploy`。**
 
-```bash
-.
-├── .github/              # GitHub Actions 工作流配置
-├── .vscode/              # VS Code 编辑器建议配置
-├── scaffolds/            # 文章和页面的模板文件
-├── source/               # 博客源文件 (文章、页面、图片等)
-│   ├── _posts/           # 所有文章都在这里
-│   └── ...
-├── themes/               # 主题文件夹
-│   └── next/             # NexT 主题源码
-├── .gitignore            # Git 忽略文件配置
-├── _config.yml           # ❗ Hexo 核心配置文件
-├── _config.next.yml      # ❗ NexT 主题配置文件 (推荐)
-├── package.json          # 项目依赖信息
-└── pnpm-lock.yaml        # pnpm 锁文件，确保依赖版本一致
-```
+### 自动化部署工作流
 
-### 2. 核心配置文件
+新的工作流极其简单：
 
-- **站点配置 (`_config.yml`)**:
-  - **Site**: `title`, `subtitle`, `author`, `language`, `url` 等基本信息。
-  - **Deployment**: `deploy` 部分配置了部署的目标仓库和分支，**请勿轻易修改**。
+1.  在本地完成文章撰写或配置修改。
+2.  将更改提交到 Git：
+    ```bash
+    git add .
+    git commit -m "feat: 添加新文章《关于 Vercel》"
+    ```
+3.  将提交推送到 GitHub 的 `main` 分支：
+    ```bash
+    git push origin main
+    ```
+4.  **完成！** Vercel 会自动检测到推送，拉取最新代码，执行构建命令（`pnpm install && hexo generate`），并将生成的内容部署到全球节点。你可以在 Vercel 的 Dashboard 中查看实时部署日志。
 
-- **主题配置 (`_config.next.yml`)**:
-  - 这是从 `themes/next/_config.yml` **分离**出来的用户配置文件，**所有主题相关的修改都应在此进行**。
-  - **Scheme**: 切换 NexT 的不同外观风格 (Muse/Mist/Pisces/Gemini)。
-  - **Menu**: 配置导航栏菜单项。
-  - **Avatar/Social**: 设置头像和社交媒体链接。
-  - **Features**: 开/关各种功能，如代码复制、阅读进度条、评论系统等。
+### 手动部署 (备用)
+如果需要（例如，部署到备用服务器），依然可以执行传统的手动部署命令：`hexo clean && hexo g && hexo d`。但这已不是本项目的主要部署方式。
 
-> **最佳实践**: 始终在 `_config.next.yml` 中修改主题配置，而不是直接动 `themes/next/` 目录下的文件。这样可以让你在未来平滑升级主题，而不会丢失自己的定制。
+---
+
+## 🔧 配置深度解析 (Configuration Deep Dive)
+
+- **Hexo 核心配置 ([`_config.yml`](https://github.com/424635328/Nomad/blob/main/_config.yml))**:
+  负责网站的底层设置，如 URL、永久链接格式、资源文件夹等。详细配置请参阅 [Hexo 配置文档](https://hexo.io/zh-cn/docs/configuration)。
+
+- **Fluid 主题配置 ([`_config.fluid.yml`](https://github.com/424635328/Nomad/blob/main/_config.fluid.yml))**:
+  **所有外观和功能的定制都应在此文件进行**。这种分离配置的方式可以让你在未来轻松升级主题内核，而不会丢失个性化设置。
+
+  > **必读**: 在进行定制前，请务必仔细阅读 [**Fluid 官方配置指南**](https://hexo.fluid-dev.com/docs/guide/)，它详细解释了每一个配置项。
 
 ---
 
 ## ❓ 常见问题排查 (FAQ)
 
-**Q1: `hexo d` 部署失败，提示权限问题或认证失败。**
-> **A:** 确保你的电脑已经配置好了对 GitHub 的 SSH 密钥认证。如果你使用的是 HTTPS 协议部署，可能需要配置 Personal Access Token (PAT) 或使用 Git Credential Manager。检查 `_config.yml` 中的 `repo` 地址是否正确。
+**Q1: Vercel 部署失败了，怎么办？**
+> **A:** 1. **查看日志**: 在 Vercel 的部署详情页，仔细阅读 "Build Logs"。绝大多数错误信息（如依赖安装失败、命令执行错误）都会在这里显示。 2. **本地模拟**: 在本地执行 Vercel 的构建命令 `pnpm install && hexo generate`，看是否能成功。如果本地也失败，说明是项目本身的问题。 3. **检查 Node.js 版本**: Vercel 默认使用较新的 Node.js 版本，可以在 Vercel 项目的 "Settings" -> "General" -> "Node.js Version" 中指定版本，使其与你的本地环境一致。
 
-**Q2: 修改了配置，但本地预览没效果。**
-> **A:** 首先尝试 `Ctrl+C` 停止 `hexo server` 服务后重新启动。对于某些深层配置的修改，可能需要执行 `hexo clean` 清理缓存后再启动服务。
+**Q2: 如何在 Vercel 上绑定自定义域名？**
+> **A:** 在 Vercel 项目的 "Settings" -> "Domains" 页面，输入你的域名并添加。Vercel 会提示你需要在你的域名注册商处添加 CNAME 或 A 记录。配置完成后，Vercel 会自动为你签发和续期免费的 SSL 证书。
 
-**Q3: 图片显示不出来怎么办？**
-> **A:** 推荐使用 Hexo 的 [资源文件夹](https://hexo.io/zh-cn/docs/asset-folders) 功能。确保 `_config.yml` 中的 `post_asset_folder` 设置为 `true`。这样 `hexo new "文章名"` 时会自动创建同名文件夹，把图片放进去，然后在 Markdown 中使用相对路径 `![alt](./图片名.png)` 即可。
-
-**Q4: 如何升级 NexT 主题？**
-> **A:** 由于我们没有使用 Git Submodule，升级主题最简单的方式是去 [Hexo 官网](https://hexo.io/themes/) 查看最新版本的发布说明，然后下载新的主题包，替换掉 `themes/next` 文件夹。因为你的配置都在 `_config.next.yml` 里，所以基本不会受影响。
+**Q3: 如何升级 Fluid 主题？**
+> **A:** 访问 [Fluid 的 GitHub Releases 页面](https://github.com/fluid-dev/hexo-theme-fluid/releases)，下载最新版本的 `source code (zip)`，解压后替换掉你项目中的 `themes/fluid` 文件夹。由于你的所有配置都在外部的 `_config.fluid.yml` 文件中，升级过程通常是无缝的。
 
 ---
 
-## 🤝 贡献与支持 (Contributing & Support)
+## 🙏 致谢 (Acknowledgements)
 
-虽然这是一个个人博客项目，但如果你发现了任何拼写错误、配置问题或有更好的实践建议，非常欢迎通过以下方式参与：
+本博客的诞生离不开以下优秀的开源项目与服务：
 
-- **提交 Issue**: 描述你发现的问题或建议。
-- **发起 Pull Request**: 如果你能直接修复问题，那就更棒了！
+-   [**Hexo**](https://hexo.io/) - 强大的静态站点生成器。
+-   [**Fluid**](https://github.com/fluid-dev/hexo-theme-fluid) - 优雅、美观的主题。
+-   [**Vercel**](https://vercel.com/) - 提供了无与伦比的开发与部署体验。
+-   [**GitHub**](https://github.com/) - 提供了代码托管和社区的基石。
 
 <div align="center">
 

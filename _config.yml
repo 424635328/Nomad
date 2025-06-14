@@ -186,7 +186,7 @@ deploy:
   # 部署类型。对于 GitHub Pages，通常是 'git'。
   type: git
   # 你的 GitHub 仓库地址。推荐使用 SSH 格式。
-  repo: git@github.com:<你的用户名>/<你的仓库名>.git
+  repo: git@github.com:424635328/Nomad.git
   # 部署到的分支。对于 GitHub Pages，通常是 'gh-pages' 或 'main'。
   branch: gh-pages
   # 部署时的提交信息。
