@@ -191,7 +191,7 @@ hexo deploy
 > **A:** 推荐使用 Hexo 的 [资源文件夹](https://hexo.io/zh-cn/docs/asset-folders) 功能。确保 `_config.yml` 中的 `post_asset_folder` 设置为 `true`。这样 `hexo new "文章名"` 时会自动创建同名文件夹，把图片放进去，然后在 Markdown 中使用相对路径 `![alt](./图片名.png)` 即可。
 
 **Q4: 如何升级 NexT 主题？**
-> **A:** 由于我们没有使用 Git Submodule，升级主题最简单的方式是去 [NexT 官网](https://theme-next.js.org/) 查看最新版本的发布说明，然后下载新的主题包，替换掉 `themes/next` 文件夹。因为你的配置都在 `_config.next.yml` 里，所以基本不会受影响。
+> **A:** 由于我们没有使用 Git Submodule，升级主题最简单的方式是去 [Hexo 官网](https://hexo.io/themes/) 查看最新版本的发布说明，然后下载新的主题包，替换掉 `themes/next` 文件夹。因为你的配置都在 `_config.next.yml` 里，所以基本不会受影响。
 
 ---
 
